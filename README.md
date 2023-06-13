@@ -8,7 +8,7 @@
 
 ## About <a name = "about"></a>
 
-Alura's C++ excercise -  Lesson 2
+Alura's C++ exercise -  Lesson 2
 
 ## Getting Started <a name = "getting_started"></a>
 
