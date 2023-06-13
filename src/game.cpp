@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <fstream>
 #include <string>
+#include <ctime>
 #include "./utils/fileUtil.cpp"
 
 using namespace std;
@@ -53,6 +54,7 @@ namespace Game {
             string  get_secret_word() {
                 FileUtil words;
                 vector<string> word_list = words.get_content("./src/data/wordlist.txt");
+                srand(time(NULL));
                 int random_index = rand() % word_list.size();
                 return word_list[random_index];
             }
