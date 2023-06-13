@@ -20,18 +20,16 @@ namespace Game {
             char current_guess;
             string attempted_letters = "";
             string guessed_letters = "";
-            FileUtil words;
             bool isHanged = false;
             bool debug = true;
             bool won = false;
             int lives = 9;   /*Head, Two eyes, mouth, body, 2 arms & two legs*/
 
-            string secret_word = "melon";
+            string secret_word = get_secret_word();
             void play() {
                 println("\n*****************************");
                 println("*  Welcome to Hangman Game  *");
                 println("*****************************");
-                words.get_content("./src/data/wordlist.txt");
                 if(debug) {
                     println("[DEBUG] Secret word: " + secret_word);
                 }
@@ -51,6 +49,13 @@ namespace Game {
                 }
             }
         private:
+            /* # TODO: Criar vetor Chutopu */ 
+            string  get_secret_word() {
+                FileUtil words;
+                vector<string> word_list = words.get_content("./src/data/wordlist.txt");
+                int random_index = rand() % word_list.size();
+                return word_list[random_index];
+            }
             void guess() {
                 cout << "\nLives: " << lives << " - Guessed Right: " << guessed_letters << " - Attempted: " << attempted_letters << endl;
                 cout << "\nGuess a letter: ";

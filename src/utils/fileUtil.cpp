@@ -25,9 +25,6 @@ namespace Utils {
                 while (inFile >> x) {
                     words.push_back(x);
                 }
-                for (int i = 0; i < words.size(); i++) {
-                    cout << words[i] << endl;
-                }
                 return words;
                 inFile.close();
             }
